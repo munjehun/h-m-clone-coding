@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import ProductAll from "./page/ProductAll";
 import Login from "./page/Login";
 import ProductDetail from "./page/ProductDetail";
+import Navbar from "./components/Navbar";
 
 // 1. 전체 상품 페이지
 // 2. 로그인 페이지
@@ -20,6 +21,7 @@ import ProductDetail from "./page/ProductDetail";
 function App() {
   return (
     <div>
+      <Navbar />
       <Routes>
         <Route path="/" element={<ProductAll />} />
         <Route path="/login" element={<Login />} />

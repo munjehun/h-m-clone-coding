@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+.login-button {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 20px;
+  align-items: center;
+}
+
+.login-button span {
+  font-size: medium;
+  font-weight: 700;
+  margin: 5px;
+}
+
+.nav-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  position: relative;
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+.menu-list li {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.nav-search {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+
+.nav-search input {
+  border: none;
+  font-size: medium;
+  margin-left: 5px;
+}
