@@ -45,15 +45,7 @@
       "new": false,
       "size": ["S", "M", "L"]
     },
-    {
-      "id": 5,
-      "img": "https://lp2.hm.com/hmgoepprod?set=source[/95/20/9520af2b69e69ef18fbad1d2673d47b1afe2b107.jpg],origin[dam],category[],type[LOOKBOOK],res[z],hmver[1]&call=url[file:/product/main]",
-      "title": "자카드 셔츠 드레스",
-      "price": 39900,
-      "choice": false,
-      "new": false,
-      "size": ["S", "M", "L"]
-    },
+
     {
       "id": 6,
       "img": "https://lp2.hm.com/hmgoepprod?set=source[/66/eb/66ebc8ebbdc939176137327d43db5c22d2d0292f.jpg],origin[dam],category[],type[LOOKBOOK],res[z],hmver[1]&call=url[file:/product/main]",
@@ -97,15 +89,6 @@
       "price": 19900,
       "choice": true,
       "new": false,
-      "size": ["S", "M", "L"]
-    },
-    {
-      "id": 11,
-      "img": "https://lp2.hm.com/hmgoepprod?set=source[/d1/aa/d1aa5d5d4a3d0699689e7f6187514ad70dc958d6.jpg],origin[dam],category[],type[LOOKBOOK],res[z],hmver[1]&call=url[file:/product/main]",
-      "title": "플레어 로라이즈 진",
-      "price": 29900,
-      "choice": true,
-      "new": true,
       "size": ["S", "M", "L"]
     },
     {

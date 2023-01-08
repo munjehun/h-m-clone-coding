@@ -2,8 +2,11 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+  let navigate = useNavigate();
+
   const menuList = [
     "여성",
     "Divided",
@@ -19,11 +22,11 @@ function Navbar() {
     <div>
       <div className="login-button">
         <FontAwesomeIcon icon={faUser} />
-        <span>로그인</span>
+        <span onClick={() => navigate("/login")}> 로그인</span>
       </div>
       <div className="nav-logo">
         <img
-          width={100}
+          onClick={() => navigate("/")}
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/2560px-H%26M-Logo.svg.png"
           alt="H&M logo"
         />
