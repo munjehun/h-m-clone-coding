@@ -11,11 +11,12 @@
   align-items: center;
 }
 
-.login-button span {
+.login-button a {
   font-size: medium;
   font-weight: 700;
-  margin: 5px;
-  cursor: pointer;
+  padding: 5px;
+  text-decoration: none;
+  color: black;
 }
 
 .nav-logo {
