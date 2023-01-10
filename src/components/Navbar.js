@@ -2,9 +2,9 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ authenticate, setAuthenticate }) {
   const navigate = useNavigate();
 
   const menuList = [
@@ -22,7 +22,11 @@ function Navbar() {
     <div>
       <div className="login-button">
         <FontAwesomeIcon icon={faUser} />
-        <Link to="/login"> 로그인</Link>
+        {authenticate ? (
+          <span onClick={() => setAuthenticate(false)}>로그아웃</span>
+        ) : (
+          <span onClick={() => navigate("/login")}> 로그인</span>
+        )}
       </div>
       <div className="nav-logo">
         <img
