@@ -1,11 +1,19 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 function Navbar({ authenticate, setAuthenticate }) {
   const navigate = useNavigate();
+
+  const search = (e) => {
+    if (e.key === "Enter") {
+      let keyword = e.target.value;
+
+      navigate(`/?q=${keyword}`); //q로 해줘야 함 (Json Server가 그렇게 인식하도록 되어있음)
+    }
+  };
 
   const menuList = [
     "여성",
@@ -43,7 +51,11 @@ function Navbar({ authenticate, setAuthenticate }) {
         </ul>
         <div className="nav-search">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
-          <input type="text" placeholder="제품검색" />
+          <input
+            type="text"
+            placeholder="제품검색"
+            onKeyPress={(e) => search(e)}
+          />
         </div>
       </div>
     </div>

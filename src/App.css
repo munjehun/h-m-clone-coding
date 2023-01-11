@@ -60,10 +60,16 @@
 
 .product-card {
   transition: all 0.125s;
+  cursor: pointer;
 }
 
 .product-card:hover {
-  scale: 1.05;
+  scale: 1.1;
+}
+
+.product-card img {
+  width: 264px;
+  height: 396;
 }
 
 .product-img {
