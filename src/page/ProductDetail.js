@@ -14,7 +14,9 @@ const ProductDetail = () => {
   const [productDetail, setProductDetail] = useState("");
 
   const getProducts = async () => {
-    let product = await fetch(`http://localhost:5000/products/${id}`);
+    let product = await fetch(
+      `https://my-json-server.typicode.com/munjehun/hnm-clone-coding/products/${id}`
+    );
     let data = await product.json();
     setProductDetail(data);
   };

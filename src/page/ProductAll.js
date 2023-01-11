@@ -11,11 +11,12 @@ const ProductAll = () => {
     let searchQuery = query.get("q") || "";
     console.log(searchQuery);
     let response = await fetch(
-      `http://localhost:5000/products?q=${searchQuery}`
+      `https://my-json-server.typicode.com/munjehun/hnm-clone-coding/products?q=${searchQuery}`
     );
     let data = await response.json();
     setProducts(data);
   };
+  console.log(products);
 
   useEffect(() => {
     getProducts();
