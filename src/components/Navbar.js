@@ -31,7 +31,14 @@ function Navbar({ authenticate, setAuthenticate }) {
       <div className="login-button">
         <FontAwesomeIcon icon={faUser} />
         {authenticate ? (
-          <span onClick={() => setAuthenticate(false)}>로그아웃</span>
+          <span
+            onClick={() => {
+              setAuthenticate(false);
+              alert("로그아웃 되었습니다.");
+            }}
+          >
+            로그아웃
+          </span>
         ) : (
           <span onClick={() => navigate("/login")}> 로그인</span>
         )}
