@@ -25,7 +25,6 @@ const ProductDetail = () => {
     getProducts();
   }, []);
 
-  const size = productDetail.size;
   console.log(productDetail);
   return (
     <Container>

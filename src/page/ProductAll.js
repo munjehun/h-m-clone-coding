@@ -1,24 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import ProductCard from "../components/ProductCard";
 import { Container, Row, Col } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
+import { productAction } from "../redux/actions/productAction";
+import { useDispatch, useSelector } from "react-redux";
 
 const ProductAll = () => {
-  const [products, setProducts] = useState([]);
-  const [query, setQuery] = useSearchParams();
+  const dispatch = useDispatch();
+  const [query] = useSearchParams();
+  const products = useSelector((state) => state.products);
 
   const getProducts = async () => {
     let searchQuery = query.get("q") || "";
-    let response = await fetch(
-      `https://my-json-server.typicode.com/munjehun/hnm-clone-coding/products?q=${searchQuery}`
-    );
-    let data = await response.json();
-    setProducts(data);
+    dispatch(productAction.getProducts(searchQuery));
+    //바로 action을 호출하면 store로 가버리기 때문에 미들웨어 호출
   };
 
   useEffect(() => {
     getProducts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);
+
+  console.log(products);
 
   return (
     <div>
