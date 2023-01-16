@@ -10,14 +10,6 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const loginUser = (event) => {
-    if (id.length < 1) {
-      alert("아이디를 입력하세요.");
-      return;
-    }
-    if (password.length < 1) {
-      alert("비밀번호를 입력하세요.");
-      return;
-    }
     event.preventDefault();
     navigate("/");
     dispatch(authenticateAction.login(id, password));
