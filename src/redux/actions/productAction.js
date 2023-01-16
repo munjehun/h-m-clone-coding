@@ -7,7 +7,6 @@ function getProducts(searchQuery) {
     );
     let data = await response.json();
     dispatch({ type: "GET_PRODUCT_SUCCESS", payload: { data } });
-    console.log(data);
   };
 }
 

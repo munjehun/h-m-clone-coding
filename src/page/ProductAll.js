@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 const ProductAll = () => {
   const dispatch = useDispatch();
   const [query] = useSearchParams();
-  const products = useSelector((state) => state.products);
+  const products = useSelector((state) => state.product.products);
 
   const getProducts = async () => {
     let searchQuery = query.get("q") || "";
@@ -20,8 +20,6 @@ const ProductAll = () => {
     getProducts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);
-
-  console.log(products);
 
   return (
     <div>

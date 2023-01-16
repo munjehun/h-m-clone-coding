@@ -1,12 +1,15 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faMagnifyingGlass, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { authenticateAction } from "../redux/actions/authenticateAction";
 
-function Navbar({ authenticate, setAuthenticate }) {
+function Navbar() {
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
+  const authenticate = useSelector((state) => state.auth.authenticate);
   const search = (e) => {
     if (e.key === "Enter") {
       let keyword = e.target.value;
@@ -33,7 +36,7 @@ function Navbar({ authenticate, setAuthenticate }) {
         {authenticate ? (
           <span
             onClick={() => {
-              setAuthenticate(false);
+              dispatch(authenticateAction.logout());
               alert("로그아웃 되었습니다.");
             }}
           >
