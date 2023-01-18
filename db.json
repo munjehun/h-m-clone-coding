@@ -34,7 +34,7 @@
       "price": 39900,
       "choice": false,
       "new": true,
-      "size": ["S", "M", "L"]
+      "size": ["M", "L"]
     },
     {
       "id": 4,
@@ -43,7 +43,7 @@
       "price": 29900,
       "choice": true,
       "new": false,
-      "size": ["S", "M", "L"]
+      "size": ["S", "M"]
     },
 
     {
@@ -80,7 +80,7 @@
       "price": 19900,
       "choice": false,
       "new": true,
-      "size": ["S", "M", "L"]
+      "size": ["S", "M", "L - 품절"]
     },
     {
       "id": 10,

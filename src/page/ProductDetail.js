@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {
   Container,
@@ -8,25 +8,26 @@ import {
   DropdownButton,
   Button,
 } from "react-bootstrap";
+import { productAction } from "../redux/actions/productAction";
+import { useDispatch, useSelector } from "react-redux";
 
 const ProductDetail = () => {
+  const productDetail = useSelector((state) => state.product.productDetail);
+  const dispatch = useDispatch();
   const { id } = useParams();
-  const [productDetail, setProductDetail] = useState("");
 
   const getProducts = async () => {
-    let product = await fetch(
-      `https://my-json-server.typicode.com/munjehun/hnm-clone-coding/products/${id}`
-    );
-    let data = await product.json();
-    setProductDetail(data);
+    dispatch(productAction.getProductDetail(id));
   };
 
   useEffect(() => {
     getProducts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(productDetail);
-  return (
+  console.log(productDetail.size);
+
+  return productDetail.size ? (
     <Container>
       <Row>
         <Col md={6} className="product-img">
@@ -48,6 +49,8 @@ const ProductDetail = () => {
         </Col>
       </Row>
     </Container>
+  ) : (
+    <div className="product-loading">상품의 정보를 불러오는 중입니다.</div>
   );
 };
 

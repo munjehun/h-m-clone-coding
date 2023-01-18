@@ -10,5 +10,15 @@ function getProducts(searchQuery) {
   };
 }
 
-export const productAction = { getProducts };
+function getProductDetail(id) {
+  return async (dispatch, getState) => {
+    let product = await fetch(
+      `https://my-json-server.typicode.com/munjehun/hnm-clone-coding/products/${id}`
+    );
+    let data = await product.json();
+    dispatch({ type: "GET_PRODUCTDETAIL_SUCCESS", payload: { data } });
+  };
+}
+
+export const productAction = { getProducts, getProductDetail };
 //productAction라는 객체에 함수를 담아서 반환 = 미들웨어 함수가 여러개가 될 거라서
