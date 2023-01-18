@@ -25,7 +25,7 @@ const ProductDetail = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(productDetail.size);
+  console.log(productDetail);
 
   return productDetail.size ? (
     <Container>
